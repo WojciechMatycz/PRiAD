@@ -272,11 +272,17 @@ legend(figTabVarNames);
 %% %Wykresy %Srednia arytmetyczna 
 close all;
 
-figTabAvg_table = zeros(1,11)
-
-for i = 1:11
-    figTabAvg_table(i) = plot_avg(figTab1, figTabVarNames, i);
-end
+figTabAvg_table1 = plot_avg(figTab1, figTabVarNames, 1);
+figTabAvg_table2 = plot_avg(figTab2, figTabVarNames, 2);
+figTabAvg_table3 = plot_avg(figTab3, figTabVarNames, 3);
+figTabAvg_table4 = plot_avg(figTab4, figTabVarNames, 4);
+figTabAvg_table5 = plot_avg(figTab5, figTabVarNames, 5);
+figTabAvg_table6 = plot_avg(figTab6, figTabVarNames, 6);
+figTabAvg_table7 = plot_avg(figTab7, figTabVarNames, 7);
+figTabAvg_table8 = plot_avg(figTab8, figTabVarNames, 8);
+figTabAvg_table9 = plot_avg(figTab9, figTabVarNames, 9);
+figTabAvg_table10 = plot_avg(figTab10, figTabVarNames, 10);
+figTabAvg_table11 = plot_avg(figTab11, figTabVarNames, 11);
 
 %% %Srednia geometryczna 
 close all;
@@ -285,113 +291,66 @@ close all;
 
 % œrednia geometryczna dla dat2
 subplot(4,2,1);
-figTabGeo2 = bar(table2array(figTab2(2,:)),'r');
-xticklabels(figTabVarNames);
-title('Srednia geometryczna dat2');
+figTabGeo2 = plot_geo_avg(figTab2, figTabVarNames, 2);
 
 % œrednia geometryczna dla dat3
 subplot(4,2,2);
-figTabGeo3 = bar(table2array(figTab3(2,:)),'r');
-xticklabels(figTabVarNames);
-title('Srednia geometryczna dat3');
+figTabGeo3 = plot_geo_avg(figTab3, figTabVarNames, 3);
 
 % œrednia geometryczna dla dat4
 subplot(4,2,3);
-figTabGeo4 = bar(table2array(figTab4(2,:)),'r');
-xticklabels(figTabVarNames);
-title('Srednia geometryczna dat4');
+figTabGeo4 = plot_geo_avg(figTab4, figTabVarNames, 4);
 
 % œrednia geometryczna dla dat5
 subplot(4,2,4);
-figTabGeo5 = bar(table2array(figTab5(2,:)),'r');
-xticklabels(figTabVarNames);
-title('Srednia geometryczna dat5');
+figTabGeo5 = plot_geo_avg(figTab5, figTabVarNames, 5);
 
 % œrednia geometryczna dla dat6
 subplot(4,2,5);
-figTabGeo6 = bar(table2array(figTab6(2,:)),'r');
-xticklabels(figTabVarNames);
-title('Srednia geometryczna dat6');
+figTabGeo6 = plot_geo_avg(figTab6, figTabVarNames, 6);
 
 % œrednia geometryczna dla dat10
 subplot(4,2,6);
-figTabGeo10 = bar(table2array(figTab10(2,:)),'r');
-xticklabels(figTabVarNames);
-title('Srednia geometryczna dat10');
+figTabGeo10 = plot_geo_avg(figTab10, figTabVarNames, 10);
 
 % œrednia geometryczna dla dat11
 subplot(4,2,7);
-figTabGeo11 = bar(table2array(figTab11(2,:)),'r');
-xticklabels(figTabVarNames);
-title('Srednia geometryczna dat11');
+figTabGeo11 = plot_geo_avg(figTab11, figTabVarNames, 11);
 
 %% %Srednia harmoniczna
 
 % œrednia harmoniczna dla dat1
-subplot(6,2,1);
-figTabHarm1 = bar(table2array(figTab1(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat1');
+figTabHarm1 = plot_harm_avg(figTab1, figTabVarNames, 1);
 
 % œrednia harmoniczna dla dat2
-subplot(6,2,2);
-figTabHarm2 = bar(table2array(figTab2(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat2');
+figTabHarm2 = plot_harm_avg(figTab2, figTabVarNames, 2);
 
 % œrednia harmoniczna dla dat3
-subplot(6,2,3);
-figTabHarm3 = bar(table2array(figTab3(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat3');
+figTabHarm3 = plot_harm_avg(figTab3, figTabVarNames, 3);
 
 % œrednia harmoniczna dla dat4
-subplot(6,2,4);
-figTabHarm4 = bar(table2array(figTab4(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat4');
+figTabHarm4 = plot_harm_avg(figTab4, figTabVarNames, 4);
 
 % œrednia harmoniczna dla dat5
-subplot(6,2,5);
-figTabHarm5 = bar(table2array(figTab5(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat5');
+figTabHarm5 = plot_harm_avg(figTab5, figTabVarNames, 5);
 
 % œrednia harmoniczna dla dat6
-subplot(6,2,6);
-figTabHarm6 = bar(table2array(figTab6(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat6');
+figTabHarm6 = plot_harm_avg(figTab6, figTabVarNames, 6);
 
 % œrednia harmoniczna dla dat7
-subplot(6,2,7);
-figTabHarm7 = bar(table2array(figTab7(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat7');
+figTabHarm7 = plot_harm_avg(figTab7, figTabVarNames, 7);
 
 % œrednia harmoniczna dla dat8
-subplot(6,2,8);
-figTabHarm8 = bar(table2array(figTab8(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat8');
+figTabHarm8 = plot_harm_avg(figTab8, figTabVarNames, 8);
 
 % œrednia harmoniczna dla dat9
-subplot(6,2,9);
-figTabHarm9 = bar(table2array(figTab9(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat9');
+figTabHarm9 = plot_harm_avg(figTab9, figTabVarNames, 9);
 
 % œrednia harmoniczna dla dat10
-subplot(6,2,10);
-figTabHarm10 = bar(table2array(figTab10(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat10');
+figTabHarm10 = plot_harm_avg(figTab10, figTabVarNames, 10);
 
 % œrednia harmoniczna dla dat11
-subplot(6,2,11);
-figTabHarm11 = bar(table2array(figTab11(3,:)),'y');
-xticklabels(figTabVarNames);
-title('Srednia harmoniczna dat11');
+figTabHarm11 = plot_harm_avg(figTab11, figTabVarNames, 11);
 
 
 %% % Kwartyle, mediana - wykresy pude³kowe
@@ -991,4 +950,17 @@ function figTabAvg = plot_avg(figTab, figTabVarNames, index)
     figTabAvg = bar(table2array(figTab(1,:)),'b');
     xticklabels(figTabVarNames);
     title(sprintf('Srednia arytmetyczna dat%d',index));
+end
+
+function figTabGeoAvg = plot_geo_avg(figTab, figTabVarNames, index)
+    figTabGeoAvg = bar(table2array(figTab(2,:)),'r');
+    xticklabels(figTabVarNames);
+    title(sprintf('Srednia geometryczna dat%d',index));
+end
+
+function figTabHarmAvg = plot_harm_avg(figTab, figTabVarNames, index)
+    subplot(6,2,index);
+    figTabHarmAvg = bar(table2array(figTab(3,:)),'y');
+    xticklabels(figTabVarNames);
+    title(sprintf('Srednia harmoniczna dat%d',index));
 end
