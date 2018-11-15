@@ -271,71 +271,12 @@ legend(figTabVarNames);
 
 %% %Wykresy %Srednia arytmetyczna 
 close all;
-% œrednia arytmetyczna dla dat1
-subplot(6,2,1);
-figTabAvg1 = bar(table2array(figTab1(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat1');
 
-% œrednia arytmetyczna dla dat2
-subplot(6,2,2);
-figTabAvg2 = bar(table2array(figTab2(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat2');
+figTabAvg_table = zeros(1,11)
 
-% œrednia arytmetyczna dla dat3
-subplot(6,2,3);
-figTabAvg3 = bar(table2array(figTab3(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat3');
-
-% œrednia arytmetyczna dla dat4
-subplot(6,2,4);
-figTabAvg4 = bar(table2array(figTab4(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat4');
-
-% œrednia arytmetyczna dla dat5
-subplot(6,2,5);
-figTabAvg5 = bar(table2array(figTab5(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat5');
-
-% œrednia arytmetyczna dla dat6
-subplot(6,2,6);
-figTabAvg6 = bar(table2array(figTab6(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat6');
-
-% œrednia arytmetyczna dla dat7
-subplot(6,2,7);
-figTabAvg7 = bar(table2array(figTab7(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat7');
-
-% œrednia arytmetyczna dla dat8
-subplot(6,2,8);
-figTabAvg8 = bar(table2array(figTab8(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat8');
-
-% œrednia arytmetyczna dla dat9
-subplot(6,2,9);
-figTabAvg9 = bar(table2array(figTab9(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat9');
-
-% œrednia arytmetyczna dla dat10
-subplot(6,2,10);
-figTabAvg10 = bar(table2array(figTab10(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat10');
-
-% œrednia arytmetyczna dla dat11
-subplot(6,2,11);
-figTabAvg11 = bar(table2array(figTab11(1,:)),'b');
-xticklabels(figTabVarNames);
-title('Srednia arytmetyczna dat11');
+for i = 1:11
+    figTabAvg_table(i) = plot_avg(figTab1, figTabVarNames, i);
+end
 
 %% %Srednia geometryczna 
 close all;
@@ -746,38 +687,12 @@ end
 %% Normalizacja min-max i standaryzacja; stadnkX oraz resultStandkX daja takie same wyniki
 close all
     
-
 normk1 = calc_minMax_Stand(k1);
 normk2 = calc_minMax_Stand(k2);
 normk3 = calc_minMax_Stand(k3);
 normk4 = calc_minMax_Stand(k4);
 normk5 = calc_minMax_Stand(k5);
 normk6 = calc_minMax_Stand(k6);
-
-o = length(k2);
-normk2 = (k2 - ones(o,1)*min(k2))./(ones(o,1)*(max(k2)-min(k2)));   %normalizacja min-max
-standk2 = (k2 - ones(o,1)*mean(k2))./(ones(o,1)*std(k2));               %standaryzacja
-resultStandk2 = zscore(k2);     %funkcja realizujaca standaryzacje
-
-o = length(k3);
-normk3 = (k3 - ones(o,1)*min(k3))./(ones(o,1)*(max(k3)-min(k3)));   %normalizacja min-max
-standk3 = (k3 - ones(o,1)*mean(k3))./(ones(o,1)*std(k3));               %standaryzacja
-resultStandk3 = zscore(k3);     %funkcja realizujaca standaryzacje
-
-o = length(k4);
-normk4 = (k4 - ones(o,1)*min(k4))./(ones(o,1)*(max(k4)-min(k4)));   %normalizacja min-max
-standk4 = (k4 - ones(o,1)*mean(k4))./(ones(o,1)*std(k4));               %standaryzacja
-resultStandk4 = zscore(k4);     %funkcja realizujaca standaryzacje
-
-o = length(k5);
-normk5 = (k5 - ones(o,1)*min(k5))./(ones(o,1)*(max(k5)-min(k5)));   %normalizacja min-max
-standk5 = (k5 - ones(o,1)*mean(k5))./(ones(o,1)*std(k5));               %standaryzacja
-resultStandk5 = zscore(k5);     %funkcja realizujaca standaryzacje
-
-o = length(k6);
-normk6 = (k6 - ones(o,1)*min(k6))./(ones(o,1)*(max(k6)-min(k6)));   %normalizacja min-max
-standk6 = (k6 - ones(o,1)*mean(k6))./(ones(o,1)*std(k6));               %standaryzacja
-resultStandk6 = zscore(k6);     %funkcja realizujaca standaryzacje
 
 %%  Kowariancja (cov) oraz korelacja (corr) 
 format
@@ -1065,10 +980,15 @@ title('Dane po klasyfikacji');
 
 
 function [normk, standk, resultStandk] = calc_minMax_Stand(k)
+    o = length(k1);
+    normk = (k1 - ones(o,1)*min(k1))./(ones(o,1)*(max(k1)-min(k1)));   %normalizacja min-max
+    standk = (k1 - ones(o,1)*mean(k1))./(ones(o,1)*std(k1));               %standaryzacja
+    resultStandk = zscore(k1);     %funkcja realizujaca standaryzacje
+end
 
-o = length(k1);
-normk = (k1 - ones(o,1)*min(k1))./(ones(o,1)*(max(k1)-min(k1)));   %normalizacja min-max
-standk = (k1 - ones(o,1)*mean(k1))./(ones(o,1)*std(k1));               %standaryzacja
-resultStandk = zscore(k1);     %funkcja realizujaca standaryzacje
-
+function figTabAvg = plot_avg(figTab, figTabVarNames, index)
+    subplot(6,2,index);
+    figTabAvg = bar(table2array(figTab(1,:)),'b');
+    xticklabels(figTabVarNames);
+    title(sprintf('Srednia arytmetyczna dat%d',index));
 end
