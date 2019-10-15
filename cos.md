@@ -1,3 +1,5 @@
+##Scenariusz Główny - Create a new CR
+
 1. Supplier wybiera opcję dodania nowego CR
 2. System wyświetla formularz dodania nowego CR
 3. Supplier wypełnia formularz 
@@ -7,9 +9,8 @@
 7. System wyświetla komunikat o pomyślnym dodaniu nowego CR
 8. Supplier wybiera opcję "Zakończ"
 
-A8 - Błąd podczas walidacji pól
-<ol>
-  <li>System wyświetla komunikat o niepoprawnym wypełnieniu formularza</li>
-  <li>System wyświetla formularz z zaznaczonymi błędnie wypełnionymi polami</li>
-</ol>
+##Scenariusz alternatywny - Błąd walidacji pól
+6. System wyświetla komunikat o błędzie
+7. System wyświetla formularz dodania CR z zaznaczonymi błędnie wypełnionymi polami
 Powrót do kroku 3
+
