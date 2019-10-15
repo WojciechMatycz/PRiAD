@@ -11,5 +11,4 @@ A3 - Błąd podczas walidacji pól
 <ol type='a'>
   <li>System wyświetla komunikat o niepoprawnym wypełnieniu formularza</li>
 </ol>
-
-Powrót do kroku 3
+   Powrót do kroku 3
