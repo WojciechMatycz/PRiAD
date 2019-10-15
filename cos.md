@@ -11,9 +11,5 @@
   <li>Milk</li>
 </ol>
 <style type="text/css">
-    <ol type="a">{ list-style-type: upper-alpha; }
-  <li>Coffee</li>
-  <li>Tea</li>
-  <li>Milk</li>
-</ol>
+    ol{ list-style-type: upper-alpha; }
 </style>
