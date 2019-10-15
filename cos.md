@@ -7,8 +7,9 @@
 7. System wyświetla komunikat o pomyślnym dodaniu nowego CR
 8. Supplier wybiera opcję "Zakończ"
 
-A3 - Błąd podczas walidacji pól
-<ol type='a'>
+A8 - Błąd podczas walidacji pól
+<ol>
   <li>System wyświetla komunikat o niepoprawnym wypełnieniu formularza</li>
+  <li>System wyświetla formularz z zaznaczonymi błędnie wypełnionymi polami</li>
 </ol>
-   Powrót do kroku 3
+Powrót do kroku 3
